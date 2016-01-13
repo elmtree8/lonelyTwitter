@@ -5,7 +5,7 @@ package ca.ualberta.cs.lonelytwitter;
  */
 public class sad extends Mood {
     String MoodString;
-    private String ReturnMood() {
+    public String ReturnMood() {
         return MoodString = new String("I'm feeling sad");
     }
 }

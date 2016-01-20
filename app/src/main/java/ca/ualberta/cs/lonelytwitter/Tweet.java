@@ -12,21 +12,21 @@ public abstract class Tweet {
 
     public abstract Boolean isImportant();
 
-    ArrayList<Mood> mood = new ArrayList<Mood>();
+    //ArrayList<Mood> mood = new ArrayList<Mood>();
 
     public Tweet(Date date, String message) {
         this.date = date;
         this.message = message;
     }
 
-    public void addMood(Mood currMood) {
-        mood.add(currMood);
-    }
+    //public void addMood(Mood currMood) {
+        //mood.add(currMood);
+    //}
 
     public Tweet(String message) {
         this.message = message;
+        this.date = new Date();
     }
-
 
     public void setMessage(String message) throws TweetTooLongException {
         if (message.length() > 140) {
@@ -37,5 +37,10 @@ public abstract class Tweet {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    @Override
+    public String toString(){
+        return date.toString() + " | " + message;
     }
 }

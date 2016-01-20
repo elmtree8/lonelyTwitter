@@ -57,7 +57,6 @@ public class LonelyTwitterActivity extends Activity {
 				saveInFile();
 				//saveInFile(text, new Date(System.currentTimeMillis()));
 				//finish();
-
 			}
 		});
 		clearButton.setOnClickListener(new View.OnClickListener() {

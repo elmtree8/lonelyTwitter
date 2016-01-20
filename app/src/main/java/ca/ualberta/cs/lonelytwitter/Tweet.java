@@ -1,7 +1,7 @@
 package ca.ualberta.cs.lonelytwitter;
 
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.ArrayList;
 
 /**
  * Created by romansky on 1/12/16.

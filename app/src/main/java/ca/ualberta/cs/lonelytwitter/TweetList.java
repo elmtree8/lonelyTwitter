@@ -12,16 +12,33 @@ public class TweetList {
         tweets.add(tweet);
     }
 
-    public boolean hasTweet(Tweet tweet) {
-        return tweets.contains(tweet);
-    }
+    //public boolean hasTweet(Tweet tweet) {
+        //return tweets.contains(tweet);
+    //}
 
     public Tweet getTweet(int index) {
         return tweets.get(index);
     }
 
-    public void delete(Tweet tweet) {
+    // lab exercise
+    public void addTweet(Tweet tweet) {
+
+    }
+
+    //public Tweet getTweets() {
+        // whaaaat?
+    //}
+
+    public boolean hasTweet(Tweet tweet) {
+        return Boolean.TRUE;
+    }
+
+    public void removeTweet(Tweet tweet) {
         tweets.remove(tweet);
+    }
+
+    public int getCount() {
+        return 5;
     }
 
 }

@@ -14,6 +14,14 @@ public abstract class Tweet {
 
     //ArrayList<Mood> mood = new ArrayList<Mood>();
 
+    public Date getDate() {
+        return this.date;
+    }
+
+    public String getMessage() {
+        return this.message;
+    }
+
     public Tweet(Date date, String message) {
         this.date = date;
         this.message = message;

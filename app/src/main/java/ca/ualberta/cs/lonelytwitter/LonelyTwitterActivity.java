@@ -176,9 +176,6 @@ public class LonelyTwitterActivity extends Activity {
 		clearButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				setResult(RESULT_OK);
-				String text = bodyText.getText().toString();
-				Tweet latestTweet = new NormalTweet(text);
-				ImportantTweet latestImportantTweet = new ImportantTweet(text);
 				// latestTweet.setMessage(latestTweet.getMessage() + "!");
 				tweets.clear();
 				adapter.notifyDataSetChanged();

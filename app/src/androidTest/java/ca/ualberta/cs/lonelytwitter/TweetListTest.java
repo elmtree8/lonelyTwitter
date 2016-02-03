@@ -11,26 +11,26 @@ public class TweetListTest extends ActivityInstrumentationTestCase2 {
         super(LonelyTwitterActivity.class);
     }
 
-    public void testAddTweet() {
+    public void testAdd() {
         TweetList tweets = new TweetList();
-        Tweet tweet = new NormalTweet("Test tweet");
+      Tweet tweet = new NormalTweet("Test tweet");
 
-        tweets.add(tweet);
+          tweets.add(tweet);
 
-        assertTrue(tweets.hasTweet(tweet));
+          assertTrue(tweets.hasTweet(tweet));
 
     }
 
     public void testHasTweet() {
-        TweetList tweets = new TweetList();
-        Tweet tweet = new NormalTweet("Hello");
+      TweetList tweets = new TweetList();
+      Tweet tweet = new NormalTweet("Hello");
 
-        assertFalse(tweets.hasTweet(tweet));
+      assertFalse(tweets.hasTweet(tweet));
 
-        tweets.add(tweet);
-        tweets.hasTweet(tweet);
+      tweets.add(tweet);
+      tweets.hasTweet(tweet);
 
-        assertTrue(tweets.hasTweet(tweet));
+      assertTrue(tweets.hasTweet(tweet));
 
     }
 
@@ -39,7 +39,7 @@ public class TweetListTest extends ActivityInstrumentationTestCase2 {
         Tweet tweet = new NormalTweet("Test tweet");
 
         tweets.add(tweet);
-        tweets.delete(tweet);
+        tweets.deleteTweet(tweet);;
 
         assertFalse(tweets.hasTweet(tweet));
     }
@@ -55,5 +55,55 @@ public class TweetListTest extends ActivityInstrumentationTestCase2 {
         assertEquals(returnedTweet.getDate(), tweet.getDate());
 
     }
+
+    //lab exercise
+    //public void testAddTweet() {
+    //  TweetList tweets = new TweetList();
+    //  Tweet tweet = new NormalTweet("Test tweet");
+
+    //  tweets.add(tweet);
+    //  tweets.addTweet(tweet);
+    //  tweets.removeTweet(tweet);
+
+    //    assertTrue(tweets.isEmpty(tweets));
+
+    //}
+
+    //public void testGetTweets() {
+    //  TweetList tweets = new TweetList();
+    //  Tweet tweet = new NormalTweet("Test tweet");
+
+    //}
+
+    //public void testHasTweet() {
+    //  TweetList tweets = new TweetList();
+    //  Tweet tweet = new NormalTweet("Test tweet");
+
+    //  tweets.add(tweet);
+    //  assertFalse(tweets.hasTweet());
+
+    //  tweets.add(tweet);
+    //  assertTrue(tweets.hasTweet());
+    //}
+
+    //public void testRemoveTweet() {
+    //  TweetList tweets = new TweetList();
+    //  Tweet tweet = new NormalTweet("Test tweet");
+
+    //  tweets.add(tweet);
+    //  tweets.removeTweet(tweet);
+
+    //  assertFalse(tweets.isEmpty(tweets));
+    //}
+
+    //public void testGetCount() {
+    //    TweetList tweets = new TweetList();
+    //  Tweet tweet = new NormalTweet("Test tweet");
+
+    //    tweets.add(tweet);
+
+    //  assertTrue(tweets.getCount() == 1);
+
+    //}
 
 }

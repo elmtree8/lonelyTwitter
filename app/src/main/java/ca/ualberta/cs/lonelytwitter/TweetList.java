@@ -26,32 +26,64 @@ public class TweetList {
         tweets.add(tweet);
     }
 
-    //public boolean hasTweet(Tweet tweet) {
-        //return tweets.contains(tweet);
-    //}
+    public boolean hasTweet(Tweet tweet) {
+        return tweets.contains(tweet);
+    }
 
     public Tweet getTweet(int index) {
         return tweets.get(index);
     }
 
-    // lab exercise
-    public void addTweet(Tweet tweet) {
-
-    }
-
-    //public Tweet getTweets() {
-        // whaaaat?
-    //}
-
-    public boolean hasTweet(Tweet tweet) {
-        return Boolean.TRUE;
-    }
-
-    public void removeTweet(Tweet tweet) {
+    public void deleteTweet(Tweet tweet) {
         tweets.remove(tweet);
     }
+
+    //public boolean isEmpty(TweetList tweets) {
+    //  if (tweets.getCount() == 0) {
+    //        return Boolean.TRUE;
+    //  }
+    //  return Boolean.FALSE;
+    //}
+
+    // lab exercise
+
+    // for loop from http://stackoverflow.com/questions/14696584/java-loop-through-array
+    //public void addTweet(Tweet tweet) throws IllegalArgumentException {
+    //    for (int i = 0; i < tweets.size(); i++) {
+    //      Tweet returnedTweet = tweets.get(i);
+    //      if (tweet.getMessage().equals(returnedTweet.getMessage())) {
+    //          throw new IllegalArgumentException();
+    //      }
+    //  }
+    //  tweets.add(tweet);
+    //}
+
+    //public Tweet getTweets() {
+
+    //}
+
+    //public boolean hasTweet() {
+    //  for (int i = 0; i < tweets.size(); i++) {
+    //      Tweet tweet1 = tweets.get(i);
+    //      for (int j = 0; j < tweets.size(); j++) {
+    //          Tweet tweet2 = tweets.get(j);
+    //          if (tweet1.getMessage().equals(tweet2.getMessage())) {
+    //              return Boolean.TRUE;
+    //          }
+    //      }
+    //    }
+    //  return Boolean.FALSE;
+    //}
+
+    //public void removeTweet(Tweet tweet) {
+    //    tweets.remove(tweet);
+    //}
 
     public int getCount() {
         return 5;
     }
+
+    //public int getCount() {
+    //  return tweets.size();
+    //}
 }

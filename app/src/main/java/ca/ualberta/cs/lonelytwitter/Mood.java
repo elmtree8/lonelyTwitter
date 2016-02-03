@@ -5,6 +5,15 @@ import java.util.Date;
 /**
  * Created by elmacdon on 1/12/16.
  */
+
+/**
+ * Function that (is supposed to) give a mood to a given tweet
+ * @since 1.2.1
+ * @see LonelyTwitterActivity for more information
+ * @Author Erin
+ * @version 2.3
+ * @deprecated
+ */
 public class Mood {
     protected Date date;
 

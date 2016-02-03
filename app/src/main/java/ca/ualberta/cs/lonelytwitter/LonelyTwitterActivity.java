@@ -14,6 +14,7 @@ import java.util.Date;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -24,7 +25,110 @@ import android.widget.ListView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+/**
+ * Main Activity for an app that allows you to input text, adds a timestampt and prints
+ * it to al tweets to a log.
+ *
+ * The main activity for a small, personal Twitter app to capture, <br>notes and comments.
+ * </p>It saves the <pre>input tweets in the json files.</p>
+ * A sample code is as:<br>
+ *     <code>
+ *         for (int i = 0; i < 10; i++)
+ *             for (int j = 0; j < i; j++)
+ *                 doSomething;
+ *     </code>
+ * The list of important activities in this class are as follows:
+ * <ul>
+ *     <li>item 1</li>
+ *     <li>item 2</li>
+ *     <li>item 3</li>
+ *     <li>item 4</li>
+ * </ul>
+ * @since 1.2.1
+ * @see LonelyTwitterActivity for more information
+ * @Author Erin
+ * @version 2.3
+ * @deprecated
+ *
+ */
+
 public class LonelyTwitterActivity extends Activity {
+	/**
+	 * This arraylist is for keeping the tweets and their dare of posting. <br>
+	 * Other stuff??
+	 * @see #loadFromFile()
+	 */
+
+	public ArrayList<String> listOfItems;
+	static final String GENERAL_FILE_NAME = "fileName.json";
+
+	private int calculateTweetSize() {
+		//
+		return -1;
+	}
+
+	private String removeStopWords(String text) {
+		//
+		return "";
+	}
+
+	/**
+	 *
+	 * @param intent This is the intent to be run immediately after hitting "start" button.
+	 */
+
+	private void startSecondActivity(Intent intent) {
+		//
+	}
+
+	/**
+	 * This method does a thing
+	 * @param s is a parameter ? idk man
+	 * @return The value that is used for some job ??? ?
+	 * @deprecated
+	 */
+
+	private String someMethod(String s) {
+		return "";
+	}
+
+	/**
+	 * Temporary class made in the lab, doesn't really do anything with the app.
+	 * @param intent
+	 * @return
+	 */
+	private boolean EvaluateActivity(Intent intent) {
+		//
+		String expression1 = "", expression2 = "", expression3 = "",
+				expression4 = "";
+
+		Intent intent1 = new Intent();
+		startSecondActivity(intent1);
+		String S = someMethod(expression1 + expression2 + expression3 +
+				expression4); // move onto the next line after column 80
+		someMethod(expression1 + expression2 + expression3 +
+				expression4);
+
+
+		try {
+			while (1 < 2) {
+				int a = 1;
+				int b = 2;
+				if (a < 2) {
+					someMethod("first choice");
+				}
+				else {
+					someMethod("second choice");
+				}
+				while (1 < 2) {
+					int j = 0;
+				}
+				//
+			}
+		}
+		catch (Exception e) {}
+		return true;
+	}
 
 	private static final String FILENAME = "file.sav";
 	private EditText bodyText;
@@ -34,6 +138,16 @@ public class LonelyTwitterActivity extends Activity {
 	private ArrayAdapter<Tweet> adapter;
 
 	/** Called when the activity is first created. */
+
+	/**
+	 * Makes the activity for LonelyTwitter. Has two buttons, an editText field
+	 * for entering tweets and a ListView to display tweets. When the save
+	 * button is clicked the tweet om the EditText field is saved to a file.
+	 * When the clear button is clicked the existing tweets are cleared from
+	 * the ListView.
+	 * @param savedInstanceState
+	 */
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -72,6 +186,10 @@ public class LonelyTwitterActivity extends Activity {
 		});
 	}
 
+	/**
+	 * When the app starts the tweets are loaded from the file into the ListView
+	 */
+
 	@Override
 	protected void onStart() {
 		// TODO Auto-generated method stub
@@ -82,6 +200,10 @@ public class LonelyTwitterActivity extends Activity {
 		oldTweetsList.setAdapter(adapter);
 	}
 
+
+	/**
+	 * Loads tweets from a file
+	 */
 	private void loadFromFile() {
 		try {
 			FileInputStream fis = openFileInput(FILENAME);
@@ -100,7 +222,11 @@ public class LonelyTwitterActivity extends Activity {
 			throw new RuntimeException();
 		}
 	}
-	
+
+
+	/**
+	 * Saves tweets to a file
+	 */
 	private void saveInFile() {
 		try {
 			FileOutputStream fos = openFileOutput(FILENAME, 0);

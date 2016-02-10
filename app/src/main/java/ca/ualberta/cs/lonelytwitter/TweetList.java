@@ -3,6 +3,7 @@ package ca.ualberta.cs.lonelytwitter;
 import java.util.ArrayList;
 
 /**
+<<<<<<< HEAD
  * Created by elmacdon on 1/26/16.
  */
 
@@ -20,6 +21,7 @@ public class TweetList {
 
     /**
      * Adds
+     *
      * @param tweet
      */
     public void add(Tweet tweet) {

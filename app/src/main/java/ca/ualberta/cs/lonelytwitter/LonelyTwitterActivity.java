@@ -137,6 +137,16 @@ public class LonelyTwitterActivity extends Activity {
 	private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
 	private ArrayAdapter<Tweet> adapter;
 
+	public ArrayAdapter<Tweet> getAdapter() {
+		return adapter;
+	}
+
+	public void setAdapter(ArrayAdapter<Tweet> adapter) {
+		this.adapter = adapter;
+	}
+
+	private ArrayAdapter<Tweet> adapter;
+
 	/** Called when the activity is first created. */
 
 	/**
@@ -171,6 +181,17 @@ public class LonelyTwitterActivity extends Activity {
 				saveInFile();
 				//saveInFile(text, new Date(System.currentTimeMillis()));
 				//finish();
+
+				//
+				//
+				Intent intent = new Intent(LonelyTwitterActivity.this,
+						IntentReaderActivity.class);
+				intent.putExtra(IntentReaderActivity.TEXT_TO_TRANSFORM_KEY, "test message 1");
+				intent.putExtra(IntentReaderActivity.MODE_OF_TRANSFORM_KEY,
+						IntentReaderActivity.NORMAL);
+				startActivity(intent);
+				//
+				//
 			}
 		});
 		clearButton.setOnClickListener(new View.OnClickListener() {
@@ -179,7 +200,8 @@ public class LonelyTwitterActivity extends Activity {
 				// latestTweet.setMessage(latestTweet.getMessage() + "!");
 				tweets.clear();
 				adapter.notifyDataSetChanged();
-				saveInFile();			}
+				saveInFile();
+			}
 		});
 	}
 
@@ -193,21 +215,21 @@ public class LonelyTwitterActivity extends Activity {
 		super.onStart();
 		//String[] tweets = loadFromFile();
 		loadFromFile();
-		adapter = new ArrayAdapter<Tweet>(this, R.layout.list_item, tweets);
-		oldTweetsList.setAdapter(adapter);
-	}
-
-
 	/**
 	 * Loads tweets from a file
 	 */
+		adapter = new ArrayAdapter<Tweet>(this,
+				R.layout.list_item, tweets);
+		oldTweetsList.setAdapter(adapter);
+	}
+
 	private void loadFromFile() {
 		try {
 			FileInputStream fis = openFileInput(FILENAME);
 			BufferedReader in = new BufferedReader(new InputStreamReader(fis));
 			Gson gson = new Gson();
 
-			// Took from *URL* 01-19-16
+			// Took from https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html 01-19 2016
 			Type listType = new TypeToken<ArrayList<NormalTweet>>() {}.getType();
 			tweets = gson.fromJson(in, listType);
 
@@ -220,13 +242,13 @@ public class LonelyTwitterActivity extends Activity {
 		}
 	}
 
-
 	/**
 	 * Saves tweets to a file
 	 */
 	private void saveInFile() {
 		try {
-			FileOutputStream fos = openFileOutput(FILENAME, 0);
+			FileOutputStream fos = openFileOutput(FILENAME,
+					0);
 			BufferedWriter out = new BufferedWriter(new OutputStreamWriter(fos));
 			Gson gson = new Gson();
 			gson.toJson(tweets, out);

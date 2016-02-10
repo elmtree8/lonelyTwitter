@@ -3,6 +3,7 @@ package ca.ualberta.cs.lonelytwitter;
 import android.test.ActivityInstrumentationTestCase2;
 
 /**
+<<<<<<< HEAD
  * Created by elmacdon on 1/26/16.
  */
 public class TweetListTest extends ActivityInstrumentationTestCase2 {
@@ -13,11 +14,11 @@ public class TweetListTest extends ActivityInstrumentationTestCase2 {
 
     public void testAdd() {
         TweetList tweets = new TweetList();
-      Tweet tweet = new NormalTweet("Test tweet");
+        Tweet tweet = new NormalTweet("Test tweet");
 
-          tweets.add(tweet);
+        tweets.add(tweet);
 
-          assertTrue(tweets.hasTweet(tweet));
+         assertTrue(tweets.hasTweet(tweet));
 
     }
 
@@ -39,12 +40,13 @@ public class TweetListTest extends ActivityInstrumentationTestCase2 {
         Tweet tweet = new NormalTweet("Test tweet");
 
         tweets.add(tweet);
-        tweets.deleteTweet(tweet);;
+        tweets.deleteTweet(tweet);
 
         assertFalse(tweets.hasTweet(tweet));
+
     }
 
-    public void testGetTweet() {
+    public void testGetTweet(){
         TweetList tweets = new TweetList();
         Tweet tweet = new NormalTweet("Test tweet");
 
@@ -105,5 +107,4 @@ public class TweetListTest extends ActivityInstrumentationTestCase2 {
     //  assertTrue(tweets.getCount() == 1);
 
     //}
-
 }

@@ -230,7 +230,7 @@ public class LonelyTwitterActivity extends Activity {
 			Gson gson = new Gson();
 
 			// Took from https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html 01-19 2016
-			Type listType = new TypeToken<ArrayList<NormalTweet>>() {}.getType();
+			Type listType = new TypeToken <ArrayList<NormalTweet>>() {}.getType();
 			tweets = gson.fromJson(in, listType);
 
 		} catch (FileNotFoundException e) {

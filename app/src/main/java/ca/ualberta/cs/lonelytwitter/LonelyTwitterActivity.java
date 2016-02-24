@@ -63,7 +63,7 @@ public class LonelyTwitterActivity extends Activity {
 
                 // TODO: Replace with Elasticsearch
                 AsyncTask<NormalTweet, Void, Void> execute = new ElasticsearchTweetController.AddTweetTask();
-                execute.execute();
+                execute.execute(latestTweet);
                 //saveInFile();
 
                 setResult(RESULT_OK);

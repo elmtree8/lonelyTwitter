@@ -3,18 +3,26 @@ package ca.ualberta.cs.lonelytwitter;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
  * Created by joshua2 on 9/16/15.
  */
-public class NormalTweet extends Tweet {
+public class NormalTweet extends Tweet{
+    private ArrayList<MyObserver> myWatchers = new ArrayList<MyObserver>();
     public NormalTweet(String tweet, Date date) {
         super(tweet, date);
     }
 
     public NormalTweet(String tweet) {
         super(tweet);
+    }
+
+    @Override
+    public void setText(String text) throws TweetTooLongException {
+        super.setText(text);
+        myNotifyAll();
     }
 
     public Boolean isImportant() {
@@ -33,4 +41,14 @@ public class NormalTweet extends Tweet {
             return new NormalTweet[0];
         }
     };
+
+    public void registerObserver(Object observer) {
+        myWatchers.add(observer);
+    }
+
+    public void myNotifyAll() {
+        for (MyObserver o : myWatchers) {
+            o.myNotify();
+        }
+    }
 }

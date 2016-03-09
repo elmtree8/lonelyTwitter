@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * Created by joshua2 on 9/16/15.
  */
-public abstract class Tweet extends Object implements Tweetable, Parcelable {
+public abstract class Tweet extends Object implements Tweetable, Parcelable, MyObservable {
     private String text;
     protected Date date;
 
@@ -65,5 +65,13 @@ public abstract class Tweet extends Object implements Tweetable, Parcelable {
         in.readStringArray(data);
         this.text = data[0];
         this.date = new Date(Date.parse(data[1]));
+    }
+
+    public void registerObserver(Object o) {
+
+    }
+
+    public void myNotifyAll() {
+
     }
 }

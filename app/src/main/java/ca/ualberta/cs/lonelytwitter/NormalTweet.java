@@ -1,5 +1,6 @@
 package ca.ualberta.cs.lonelytwitter;
 
+<<<<<<< HEAD
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -50,5 +51,29 @@ public class NormalTweet extends Tweet{
         for (MyObserver o : myWatchers) {
             o.myNotify();
         }
+=======
+import java.util.Date;
+
+public class NormalTweet extends Tweet implements Tweetable {
+    public NormalTweet(Date date, String message) {
+        super(date, message);
+    }
+
+    public NormalTweet(String message) {
+        super(message);
+    }
+
+    public Date getDate() {
+        return this.date;
+    }
+
+    public String getMessage() {
+        return this.message;
+    }
+
+    @Override
+    public Boolean isImportant() {
+        return Boolean.FALSE;
+>>>>>>> 7ae5b9297c83a493b7a60a1f81a0990aa4958572
     }
 }

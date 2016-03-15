@@ -22,5 +22,9 @@ android {
 }
 
 dependencies {
+<<<<<<< HEAD
     compile 'com.google.code.gson:gson:2.3.1'
+=======
+    compile files('src/include/jest-droid-2.0.1-SNAPSHOT.jar')
+>>>>>>> 7ae5b9297c83a493b7a60a1f81a0990aa4958572
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+<<<<<<< HEAD
     <string name="hello">Joshua said:</string>
     <string name="app_name">LonelyTwitter</string>
     <string name="save">Save</string>
@@ -10,4 +11,11 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     
+=======
+    <string name="hello">I say:</string>
+    <string name="app_name">LonelyTwitter</string>
+    <string name="save">Save</string>
+    <string name="clear">Clear</string>
+
+>>>>>>> 7ae5b9297c83a493b7a60a1f81a0990aa4958572
 </resources>

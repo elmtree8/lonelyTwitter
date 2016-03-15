@@ -1,5 +1,6 @@
 package ca.ualberta.cs.lonelytwitter;
 
+<<<<<<< HEAD
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -19,10 +20,28 @@ public class ImportantTweet extends Tweet implements MyObservable {
         super(tweet);
     }
 
+=======
+import java.util.Date;
+
+/**
+ * Created by romansky on 1/12/16.
+ */
+public class ImportantTweet extends Tweet implements Tweetable {
+    public ImportantTweet(Date date, String message) {
+        super(date, message);
+    }
+
+    public ImportantTweet(String message) {
+        super(message);
+    }
+
+    @Override
+>>>>>>> 7ae5b9297c83a493b7a60a1f81a0990aa4958572
     public Boolean isImportant() {
         return Boolean.TRUE;
     }
 
+<<<<<<< HEAD
     @Override
     public String getText() {
         return "!!!" + super.getText();
@@ -47,5 +66,13 @@ public class ImportantTweet extends Tweet implements MyObservable {
 
     public void myNotifyAll() {
 
+=======
+    public Date getDate() {
+        return this.date;
+    }
+
+    public String getMessage() {
+        return "!IMPORTANT! " + this.message;
+>>>>>>> 7ae5b9297c83a493b7a60a1f81a0990aa4958572
     }
 }

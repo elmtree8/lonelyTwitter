@@ -9,6 +9,7 @@ import com.searchly.jestdroid.JestDroidClient;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import io.searchbox.core.DocumentResult;
@@ -65,6 +66,8 @@ public class ElasticsearchTweetController {
                 e.printStackTrace();
             }
 
+            Collections.sort(tweets);
+
             return tweets;
         }
     }
@@ -103,6 +106,25 @@ public class ElasticsearchTweetController {
             JestClientFactory factory = new JestClientFactory();
             factory.setDroidClientConfig(config);
             client = (JestDroidClient) factory.getObject();
+        }
+    }
+
+    // Taken from http://stackoverflow.com/questions/5927109/sort-objects-in-arraylist-by-date 03.15.16
+    public static class MyObject implements Comparable<MyObject> {
+
+        private Date dateTime;
+
+        public Date getDateTime() {
+            return dateTime;
+        }
+
+        public void setDateTime(Date datetime) {
+            this.dateTime = datetime;
+        }
+
+        @Override
+        public int compareTo(MyObject o) {
+            return getDateTime().compareTo(o.getDateTime());
         }
     }
 }

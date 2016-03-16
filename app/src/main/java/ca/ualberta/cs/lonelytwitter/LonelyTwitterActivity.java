@@ -80,6 +80,7 @@ public class LonelyTwitterActivity extends Activity {
 
                 tweets.add(latestTweet);
 
+                latestTweet.addThumbnail(thumbnail);
 
                 adapter.notifyDataSetChanged();
 
@@ -87,6 +88,9 @@ public class LonelyTwitterActivity extends Activity {
                 ElasticsearchTweetController.AddTweetTask addTweetTask = new ElasticsearchTweetController.AddTweetTask();
                 addTweetTask.execute(latestTweet);
 
+                bodyText.setText("");
+                pictureButton.setImageResource(android.R.color.transparent);
+                thumbnail = null;
 
                 setResult(RESULT_OK);
             }
